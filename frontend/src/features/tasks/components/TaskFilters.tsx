@@ -20,7 +20,7 @@ export function TaskFilters({ filters, onFiltersChange }: TaskFiltersProps) {
         <option value="">All Categories</option>
       </select>
       <select
-        value={filters.is_completed ?? ''}
+        value={filters.is_completed === undefined ? '' : filters.is_completed ? 'true' : 'false'}
         onChange={(e) =>
           onFiltersChange({
             ...filters,

@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { useTasks } from '../hooks/useTasks';
 import type { TaskFilters } from '../types/task';
 import { TaskItem } from './TaskItem';
-import { TaskFilters } from './TaskFilters';
+import { TaskFilters as TaskFiltersComponent } from './TaskFilters';
 import { TaskPagination } from './TaskPagination';
 
 export function TaskList() {
@@ -17,7 +17,7 @@ export function TaskList() {
     <div>
       <h1>Tasks</h1>
       <Link to="/tasks/new">Create New Task</Link>
-      <TaskFilters filters={filters} onFiltersChange={setFilters} />
+      <TaskFiltersComponent filters={filters} onFiltersChange={setFilters} />
       {data?.tasks.length === 0 ? (
         <div>No tasks found</div>
       ) : (
