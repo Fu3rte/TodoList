@@ -1,0 +1,223 @@
+/* ==========================================================================
+   Utility Classes and Layout - Pinterest-inspired
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Spacing Utilities
+   -------------------------------------------------------------------------- */
+.gap-xs { gap: var(--sema-spacing-xs); }
+.gap-sm { gap: var(--sema-spacing-sm); }
+.gap-md { gap: var(--sema-spacing-md); }
+.gap-lg { gap: var(--sema-spacing-lg); }
+.gap-xl { gap: var(--sema-spacing-xl); }
+.gap-2xl { gap: var(--sema-spacing-2xl); }
+
+.p-xs { padding: var(--sema-spacing-xs); }
+.p-sm { padding: var(--sema-spacing-sm); }
+.p-md { padding: var(--sema-spacing-md); }
+.p-lg { padding: var(--sema-spacing-lg); }
+.p-xl { padding: var(--sema-spacing-xl); }
+.p-2xl { padding: var(--sema-spacing-2xl); }
+
+.m-xs { margin: var(--sema-spacing-xs); }
+.m-sm { margin: var(--sema-spacing-sm); }
+.m-md { margin: var(--sema-spacing-md); }
+.m-lg { margin: var(--sema-spacing-lg); }
+.m-xl { margin: var(--sema-spacing-xl); }
+.m-2xl { margin: var(--sema-spacing-2xl); }
+
+.mt-xs { margin-top: var(--sema-spacing-xs); }
+.mt-sm { margin-top: var(--sema-spacing-sm); }
+.mt-md { margin-top: var(--sema-spacing-md); }
+.mt-lg { margin-top: var(--sema-spacing-lg); }
+.mt-xl { margin-top: var(--sema-spacing-xl); }
+.mt-2xl { margin-top: var(--sema-spacing-2xl); }
+
+.mb-xs { margin-bottom: var(--sema-spacing-xs); }
+.mb-sm { margin-bottom: var(--sema-spacing-sm); }
+.mb-md { margin-bottom: var(--sema-spacing-md); }
+.mb-lg { margin-bottom: var(--sema-spacing-lg); }
+.mb-xl { margin-bottom: var(--sema-spacing-xl); }
+.mb-2xl { margin-bottom: var(--sema-spacing-2xl); }
+
+/* --------------------------------------------------------------------------
+   Flexbox Utilities
+   -------------------------------------------------------------------------- */
+.flex { display: flex; }
+.inline-flex { display: inline-flex; }
+.flex-col { flex-direction: column; }
+.flex-row { flex-direction: row; }
+.flex-wrap { flex-wrap: wrap; }
+.flex-nowrap { flex-wrap: nowrap; }
+.flex-1 { flex: 1; }
+.flex-auto { flex: auto; }
+.flex-shrink-0 { flex-shrink: 0; }
+
+.items-start { align-items: flex-start; }
+.items-center { align-items: center; }
+.items-end { align-items: flex-end; }
+.items-stretch { align-items: stretch; }
+
+.justify-start { justify-content: flex-start; }
+.justify-center { justify-content: center; }
+.justify-end { justify-content: flex-end; }
+.justify-between { justify-content: space-between; }
+
+.self-start { align-self: flex-start; }
+.self-center { align-self: center; }
+.self-end { align-self: flex-end; }
+
+/* --------------------------------------------------------------------------
+   Grid Utilities
+   -------------------------------------------------------------------------- */
+.grid { display: grid; }
+.grid-cols-1 { grid-template-columns: repeat(1, minmax(0, 1fr)); }
+.grid-cols-2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.grid-cols-3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.grid-cols-4 { grid-template-columns: repeat(4, minmax(0, 1fr)); }
+.grid-cols-auto { grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); }
+
+/* --------------------------------------------------------------------------
+   Layout Containers
+   -------------------------------------------------------------------------- */
+
+/* App Shell - Main layout wrapper */
+.app-shell {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  background-color: var(--sema-color-background-primary);
+}
+
+.app-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Page Container - Centered content with max-width */
+.page-container {
+  width: 100%;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 0 var(--sema-spacing-xl);
+}
+
+@media (max-width: 768px) {
+  .page-container {
+    padding: 0 var(--sema-spacing-md);
+  }
+}
+
+/* Card Grid - Pinterest-style masonry-like layout */
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: var(--sema-spacing-lg);
+}
+
+/* --------------------------------------------------------------------------
+   Visibility Utilities
+   -------------------------------------------------------------------------- */
+.hidden { display: none; }
+.visible { visibility: visible; }
+.invisible { visibility: hidden; }
+.opacity-0 { opacity: 0; }
+.opacity-50 { opacity: 0.5; }
+.opacity-100 { opacity: 1; }
+
+/* --------------------------------------------------------------------------
+   Border Utilities
+   -------------------------------------------------------------------------- */
+.rounded-none { border-radius: 0; }
+.rounded-sm { border-radius: var(--sema-radius-sm); }
+.rounded-md { border-radius: var(--sema-radius-md); }
+.rounded-lg { border-radius: var(--sema-radius-lg); }
+.rounded-xl { border-radius: var(--sema-radius-xl); }
+.rounded-full { border-radius: var(--sema-radius-full); }
+
+.border { border: 1px solid var(--sema-color-border-default); }
+.border-0 { border: none; }
+.border-t { border-top: 1px solid var(--sema-color-border-default); }
+.border-b { border-bottom: 1px solid var(--sema-color-border-default); }
+.border-l { border-left: 1px solid var(--sema-color-border-default); }
+.border-r { border-right: 1px solid var(--sema-color-border-default); }
+
+/* --------------------------------------------------------------------------
+   Overflow Utilities
+   -------------------------------------------------------------------------- */
+.overflow-auto { overflow: auto; }
+.overflow-hidden { overflow: hidden; }
+.overflow-scroll { overflow: scroll; }
+.overflow-visible { overflow: visible; }
+.truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+/* --------------------------------------------------------------------------
+   Position Utilities
+   -------------------------------------------------------------------------- */
+.relative { position: relative; }
+.absolute { position: absolute; }
+.fixed { position: fixed; }
+.sticky { position: sticky; }
+.inset-0 { top: 0; right: 0; bottom: 0; left: 0; }
+.top-0 { top: 0; }
+.right-0 { right: 0; }
+.bottom-0 { bottom: 0; }
+.left-0 { left: 0; }
+
+/* --------------------------------------------------------------------------
+   Width/Height Utilities
+   -------------------------------------------------------------------------- */
+.w-full { width: 100%; }
+.w-auto { width: auto; }
+.w-screen { width: 100vw; }
+.h-full { height: 100%; }
+.h-auto { height: auto; }
+.h-screen { height: 100vh; }
+.min-h-screen { min-height: 100vh; }
+
+/* --------------------------------------------------------------------------
+   Text Utilities
+   -------------------------------------------------------------------------- */
+.text-left { text-align: left; }
+.text-center { text-align: center; }
+.text-right { text-align: right; }
+
+.font-normal { font-weight: 400; }
+.font-medium { font-weight: 500; }
+.font-semibold { font-weight: 600; }
+.font-bold { font-weight: 700; }
+
+.uppercase { text-transform: uppercase; }
+.lowercase { text-transform: lowercase; }
+.capitalize { text-transform: capitalize; }
+.tracking-tight { letter-spacing: -1.2px; }
+
+/* --------------------------------------------------------------------------
+   Cursor Utilities
+   -------------------------------------------------------------------------- */
+.cursor-pointer { cursor: pointer; }
+.cursor-default { cursor: default; }
+.cursor-not-allowed { cursor: not-allowed; }
+.cursor-grab { cursor: grab; }
+
+/* --------------------------------------------------------------------------
+   Transition Utilities
+   -------------------------------------------------------------------------- */
+.transition-all { transition: all 0.15s ease; }
+.transition-colors { transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease; }
+.transition-transform { transition: transform 0.15s ease; }
+.transition-opacity { transition: opacity 0.15s ease; }
+
+/* Hover scale effect for interactive cards */
+.hover\:scale-102:hover {
+  transform: scale(1.02);
+}
+
+.hover\:scale-105:hover {
+  transform: scale(1.05);
+}
