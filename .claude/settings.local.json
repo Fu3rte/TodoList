@@ -15,7 +15,11 @@
       "Bash(\"/c/Program Files/GitHub CLI/gh.exe\" repo create TodoList --public --source=. --remote=origin)",
       "Bash(git add:*)",
       "Bash(git commit:*)",
-      "Bash(git config:*)"
+      "Bash(git config:*)",
+      "Bash(git ls-tree:*)",
+      "Bash(git checkout:*)",
+      "Bash(git merge:*)",
+      "Bash(git push:*)"
     ]
   }
 }

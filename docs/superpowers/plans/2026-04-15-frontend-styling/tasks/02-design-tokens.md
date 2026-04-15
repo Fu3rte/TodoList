@@ -1,0 +1,184 @@
+# Task 2: Create Design Tokens CSS
+
+> **For agentic workers:** Implement this task step-by-step using superpowers:executing-plans.
+
+**Files:**
+- Create: `frontend/src/styles/tokens.css`
+
+---
+
+- [ ] **Step 1: Create design tokens CSS file**
+
+```css
+/* ==========================================================================
+   Design Tokens - Pinterest-inspired Three-Tier System
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Base Layer (--base-*) - Raw values, never used directly in components
+   -------------------------------------------------------------------------- */
+:root {
+  /* Base Colors - Brand */
+  --base-color-brand-red: #e60023;
+  --base-color-brand-red-hover: #ad081b;
+  --base-color-brand-green-700: #103c25;
+  --base-color-brand-green-700-hover: #0b2819;
+
+  /* Base Colors - Text */
+  --base-color-text-plum: #211922;
+  --base-color-text-black: #000000;
+  --base-color-text-olive: #62625b;
+  --base-color-text-silver: #91918c;
+  --base-color-text-white: #ffffff;
+
+  /* Base Colors - Interactive */
+  --base-color-focus-blue: #435ee5;
+  --base-color-performance-purple: #6845ab;
+  --base-color-recommendation-purple: #7e238b;
+  --base-color-link-blue: #2b48d4;
+  --base-color-facebook-blue: #0866ff;
+  --base-color-pressed-blue: #617bff;
+
+  /* Base Colors - Surface */
+  --base-color-surface-sand: #e5e5e0;
+  --base-color-surface-warm-light: #e0e0d9;
+  --base-color-surface-border-disabled: #c8c8c1;
+  --base-color-surface-hover-gray: #bcbcb3;
+  --base-color-surface-dark: #33332e;
+  --base-color-surface-white: #ffffff;
+
+  /* Base Colors - Semantic */
+  --base-color-error-red: #9e0a0a;
+  --base-color-badge-wash: hsla(60, 20%, 98%, 0.5);
+
+  /* Base Typography */
+  --base-font-family: 'Pin Sans', -apple-system, system-ui, 'Segoe UI', Roboto, sans-serif;
+  --base-font-size-display: 70px;
+  --base-font-size-section: 28px;
+  --base-font-size-body: 16px;
+  --base-font-size-caption: 14px;
+  --base-font-size-small: 12px;
+
+  /* Base Spacing (8px base) */
+  --base-spacing-unit: 8px;
+  --base-radius-sm: 12px;
+  --base-radius-md: 16px;
+  --base-radius-lg: 20px;
+  --base-radius-xl: 28px;
+  --base-radius-2xl: 32px;
+  --base-radius-hero: 40px;
+  --base-radius-full: 50%;
+}
+
+/* --------------------------------------------------------------------------
+   Semantic Layer (--sema-*) - Contextual meaning, used in components
+   -------------------------------------------------------------------------- */
+:root {
+  /* Semantic: Color Roles */
+  --sema-color-text-primary: var(--base-color-text-plum);
+  --sema-color-text-secondary: var(--base-color-text-olive);
+  --sema-color-text-disabled: var(--base-color-text-silver);
+  --sema-color-text-inverse: var(--base-color-text-white);
+
+  --sema-color-background-primary: var(--base-color-surface-white);
+  --sema-color-background-secondary: var(--base-color-surface-sand);
+  --sema-color-background-tertiary: var(--base-color-surface-warm-light);
+  --sema-color-background-wash: var(--base-color-badge-wash);
+
+  --sema-color-brand-primary: var(--base-color-brand-red);
+  --sema-color-brand-primary-hover: var(--base-color-brand-red-hover);
+  --sema-color-brand-success: var(--base-color-brand-green-700);
+  --sema-color-brand-success-hover: var(--base-color-brand-green-700-hover);
+
+  --sema-color-border-default: var(--base-color-text-silver);
+  --sema-color-border-hover: var(--base-color-surface-hover-gray);
+  --sema-color-border-disabled: var(--base-color-surface-border-disabled);
+  --sema-color-border-focus: var(--base-color-focus-blue);
+
+  --sema-color-interactive-link: var(--base-color-link-blue);
+  --sema-color-interactive-focus: var(--base-color-focus-blue);
+
+  --sema-color-error: var(--base-color-error-red);
+
+  /* Semantic: Typography */
+  --sema-font-family-primary: var(--base-font-family);
+  --sema-font-size-display: var(--base-font-size-display);
+  --sema-font-size-section: var(--base-font-size-section);
+  --sema-font-size-body: var(--base-font-size-body);
+  --sema-font-size-caption: var(--base-font-size-caption);
+  --sema-font-size-small: var(--base-font-size-small);
+
+  /* Semantic: Spacing */
+  --sema-spacing-xs: calc(var(--base-spacing-unit) * 0.5);   /* 4px */
+  --sema-spacing-sm: calc(var(--base-spacing-unit) * 0.75); /* 6px */
+  --sema-spacing-md: var(--base-spacing-unit);               /* 8px */
+  --sema-spacing-lg: calc(var(--base-spacing-unit) * 1.5);   /* 12px */
+  --sema-spacing-xl: calc(var(--base-spacing-unit) * 2);     /* 16px */
+  --sema-spacing-2xl: calc(var(--base-spacing-unit) * 3);    /* 24px */
+  --sema-spacing-3xl: calc(var(--base-spacing-unit) * 4);    /* 32px */
+
+  /* Semantic: Border Radius */
+  --sema-radius-sm: var(--base-radius-sm);
+  --sema-radius-md: var(--base-radius-md);
+  --sema-radius-lg: var(--base-radius-lg);
+  --sema-radius-xl: var(--base-radius-xl);
+  --sema-radius-2xl: var(--base-radius-2xl);
+  --sema-radius-hero: var(--base-radius-hero);
+  --sema-radius-full: var(--base-radius-full);
+}
+
+/* --------------------------------------------------------------------------
+   Component Layer (--comp-*) - Component-specific tokens
+   -------------------------------------------------------------------------- */
+:root {
+  /* Button: Primary */
+  --comp-button-color-background-primary: var(--base-color-brand-red);
+  --comp-button-color-background-primary-hover: var(--base-color-brand-red-hover);
+  --comp-button-color-text-primary: var(--base-color-text-black);
+  --comp-button-color-border-primary: rgba(255, 255, 255, 0);
+  --comp-button-radius: var(--base-radius-md);
+  --comp-button-padding-x: 14px;
+  --comp-button-padding-y: 6px;
+
+  /* Button: Secondary (Sand) */
+  --comp-button-color-background-secondary: var(--base-color-surface-sand);
+  --comp-button-color-background-secondary-hover: var(--base-color-surface-hover-gray);
+  --comp-button-color-text-secondary: var(--base-color-text-black);
+  --comp-button-radius-secondary: var(--base-radius-md);
+
+  /* Button: Circular Action */
+  --comp-button-color-background-circular: var(--base-color-surface-warm-light);
+  --comp-button-color-text-circular: var(--base-color-text-plum);
+  --comp-button-radius-circular: var(--base-radius-full);
+
+  /* Input */
+  --comp-input-color-background: var(--base-color-surface-white);
+  --comp-input-color-border: var(--base-color-text-silver);
+  --comp-input-color-border-focus: var(--base-color-focus-blue);
+  --comp-input-color-text: var(--base-color-text-plum);
+  --comp-input-radius: var(--base-radius-md);
+  --comp-input-padding-x: 15px;
+  --comp-input-padding-y: 11px;
+
+  /* Card */
+  --comp-card-color-background: var(--base-color-surface-white);
+  --comp-card-radius: var(--base-radius-lg);
+  --comp-card-padding: var(--base-spacing-xl);
+
+  /* Badge */
+  --comp-badge-color-background: var(--base-color-badge-wash);
+  --comp-badge-radius: var(--base-radius-sm);
+
+  /* Navigation */
+  --comp-nav-color-background: var(--base-color-surface-white);
+  --comp-nav-color-text: var(--base-color-text-plum);
+  --comp-nav-color-active: var(--base-color-brand-red);
+}
+```
+
+- [ ] **Step 2: Commit**
+
+```bash
+git add src/styles/tokens.css
+git commit -m "feat: add Pinterest-inspired design tokens"
+```
