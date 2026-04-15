@@ -3,6 +3,49 @@
    ========================================================================== */
 
 /* --------------------------------------------------------------------------
+   Form Styles
+   -------------------------------------------------------------------------- */
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: var(--sema-spacing-lg);
+  width: 100%;
+  max-width: 320px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Auth Page Layout */
+.auth-page {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background-color: var(--sema-color-background-secondary);
+  padding: var(--sema-spacing-xl);
+}
+
+.auth-card {
+  background-color: var(--comp-card-color-background);
+  border-radius: var(--comp-card-radius);
+  padding: var(--sema-spacing-3xl);
+  width: 100%;
+  max-width: 400px;
+}
+
+.auth-title {
+  font-size: var(--sema-font-size-section);
+  font-weight: 700;
+  color: var(--sema-color-text-primary);
+  text-align: center;
+  margin-bottom: var(--sema-spacing-2xl);
+}
+
+/* --------------------------------------------------------------------------
    Buttons
    -------------------------------------------------------------------------- */
 

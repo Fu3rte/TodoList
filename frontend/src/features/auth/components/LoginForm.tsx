@@ -12,25 +12,31 @@ export function LoginForm() {
   };
 
   return (
-    <form onSubmit={handleSubmit}>
-      <input
-        type="text"
-        value={username}
-        onChange={(e) => setUsername(e.target.value)}
-        placeholder="Username"
-        required
-      />
-      <input
-        type="password"
-        value={password}
-        onChange={(e) => setPassword(e.target.value)}
-        placeholder="Password"
-        required
-      />
-      <button type="submit" disabled={login.isPending}>
+    <form onSubmit={handleSubmit} className="login-form">
+      <div className="form-group">
+        <input
+          type="text"
+          className="input"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+          placeholder="Username"
+          required
+        />
+      </div>
+      <div className="form-group">
+        <input
+          type="password"
+          className="input"
+          value={password}
+          onChange={(e) => setPassword(e.target.value)}
+          placeholder="Password"
+          required
+        />
+      </div>
+      <button type="submit" className="btn-primary" disabled={login.isPending}>
         {login.isPending ? 'Logging in...' : 'Login'}
       </button>
-      {login.isError && <div>Login failed</div>}
+      {login.isError && <div className="input-error-text">Login failed</div>}
     </form>
   );
 }

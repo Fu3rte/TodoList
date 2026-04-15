@@ -1,0 +1,6 @@
+- generic [ref=e3]:
+  - heading "Login" [level=1] [ref=e4]
+  - generic [ref=e5]:
+    - textbox "Username" [ref=e6]
+    - textbox "Password" [ref=e7]
+    - button "Login" [ref=e8]
