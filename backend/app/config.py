@@ -1,17 +1,19 @@
 from pydantic_settings import BaseSettings
+from functools import lru_cache
+
 
 class Settings(BaseSettings):
-    PROJECT_NAME: str = "TodoList API"
-    VERSION: str = "1.0.0"
-    API_V1_STR: str = "/api/v1"
-
-    DATABASE_URL: str = "sqlite:///./todolist.db"
-
-    SECRET_KEY: str = "your-secret-key-here"
-    ALGORITHM: str = "HS256"
-    ACCESS_TOKEN_EXPIRE_MINUTES: int = 30
+    database_url: str
+    secret_key: str
+    algorithm: str = "HS256"
+    access_token_expire_minutes: int = 30
+    refresh_token_expire_days: int = 7
+    frontend_url: str = "http://localhost:5173"
 
     class Config:
         env_file = ".env"
 
-settings = Settings()
+
+@lru_cache
+def get_settings() -> Settings:
+    return Settings()
