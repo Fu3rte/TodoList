@@ -1,0 +1,394 @@
+/* ==========================================================================
+   Component Base Styles - Pinterest-inspired
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   Buttons
+   -------------------------------------------------------------------------- */
+
+/* Primary Button - Pinterest Red */
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sema-spacing-sm);
+  padding: var(--comp-button-padding-y) var(--comp-button-padding-x);
+  background-color: var(--comp-button-color-background-primary);
+  color: var(--comp-button-color-text-primary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  border: 2px solid var(--comp-button-color-border-primary);
+  border-radius: var(--comp-button-radius);
+  cursor: pointer;
+  transition: background-color 0.15s ease, border-color 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-primary:hover {
+  background-color: var(--comp-button-color-background-primary-hover);
+  border-color: rgba(255, 255, 255, 0);
+}
+
+.btn-primary:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+.btn-primary:active {
+  transform: scale(0.98);
+}
+
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Secondary Button - Sand Gray */
+.btn-secondary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sema-spacing-sm);
+  padding: var(--comp-button-padding-y) var(--comp-button-padding-x);
+  background-color: var(--comp-button-color-background-secondary);
+  color: var(--comp-button-color-text-secondary);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-radius: var(--comp-button-radius-secondary);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+.btn-secondary:hover {
+  background-color: var(--comp-button-color-background-secondary-hover);
+}
+
+.btn-secondary:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+.btn-secondary:active {
+  transform: scale(0.98);
+}
+
+.btn-secondary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+/* Circular Action Button */
+.btn-circular {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  padding: 0;
+  background-color: var(--comp-button-color-background-circular);
+  color: var(--comp-button-color-text-circular);
+  border: none;
+  border-radius: var(--comp-button-radius-circular);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.btn-circular:hover {
+  background-color: var(--base-color-surface-hover-gray);
+}
+
+.btn-circular:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+.btn-circular:active {
+  transform: scale(0.95);
+}
+
+/* Ghost/Transparent Button */
+.btn-ghost {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--sema-spacing-sm);
+  padding: var(--comp-button-padding-y) var(--comp-button-padding-x);
+  background-color: transparent;
+  color: var(--base-color-text-black);
+  font-size: 12px;
+  font-weight: 400;
+  line-height: normal;
+  border: none;
+  border-radius: var(--comp-button-radius);
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+  text-decoration: none;
+}
+
+.btn-ghost:hover {
+  background-color: var(--base-color-surface-warm-light);
+}
+
+.btn-ghost:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* Icon Button */
+.btn-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  background-color: transparent;
+  color: var(--sema-color-text-secondary);
+  border: none;
+  border-radius: var(--sema-radius-full);
+  cursor: pointer;
+  transition: background-color 0.15s ease, color 0.15s ease;
+}
+
+.btn-icon:hover {
+  background-color: var(--base-color-surface-warm-light);
+  color: var(--sema-color-text-primary);
+}
+
+.btn-icon:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Inputs
+   -------------------------------------------------------------------------- */
+
+.input {
+  display: block;
+  width: 100%;
+  padding: var(--comp-input-padding-y) var(--comp-input-padding-x);
+  background-color: var(--comp-input-color-background);
+  color: var(--comp-input-color-text);
+  font-size: var(--sema-font-size-body);
+  font-family: var(--sema-font-family-primary);
+  border: 1px solid var(--comp-input-color-border);
+  border-radius: var(--comp-input-radius);
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.input::placeholder {
+  color: var(--sema-color-text-disabled);
+}
+
+.input:hover {
+  border-color: var(--sema-color-border-hover);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--comp-input-color-border-focus);
+  box-shadow: 0 0 0 3px rgba(67, 94, 229, 0.15);
+}
+
+.input:disabled {
+  background-color: var(--base-color-surface-fog);
+  border-color: var(--sema-color-border-disabled);
+  color: var(--sema-color-text-disabled);
+  cursor: not-allowed;
+}
+
+/* Input with error */
+.input-error {
+  border-color: var(--sema-color-error);
+}
+
+.input-error:focus {
+  border-color: var(--sema-color-error);
+  box-shadow: 0 0 0 3px rgba(158, 10, 10, 0.15);
+}
+
+/* Input Label */
+.input-label {
+  display: block;
+  font-size: var(--sema-font-size-caption);
+  font-weight: 700;
+  color: var(--sema-color-text-primary);
+  margin-bottom: var(--sema-spacing-sm);
+}
+
+/* Input Helper Text */
+.input-helper {
+  font-size: var(--sema-font-size-small);
+  color: var(--sema-color-text-secondary);
+  margin-top: var(--sema-spacing-xs);
+}
+
+/* Input Error Text */
+.input-error-text {
+  font-size: var(--sema-font-size-small);
+  color: var(--sema-color-error);
+  margin-top: var(--sema-spacing-xs);
+}
+
+/* --------------------------------------------------------------------------
+   Cards
+   -------------------------------------------------------------------------- */
+
+.card {
+  background-color: var(--comp-card-color-background);
+  border-radius: var(--comp-card-radius);
+  padding: var(--comp-card-padding);
+  /* No shadow - Pinterest is flat by design */
+}
+
+.card-elevated {
+  background-color: var(--comp-card-color-background);
+  border-radius: var(--comp-card-radius);
+  padding: var(--comp-card-padding);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+}
+
+/* --------------------------------------------------------------------------
+   Badges / Tags
+   -------------------------------------------------------------------------- */
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--sema-spacing-xs) var(--sema-spacing-sm);
+  background-color: var(--comp-badge-color-background);
+  border-radius: var(--comp-badge-radius);
+  font-size: var(--sema-font-size-small);
+  font-weight: 500;
+  color: var(--sema-color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Checkbox (Custom)
+   -------------------------------------------------------------------------- */
+
+.checkbox-wrapper {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--sema-spacing-sm);
+  cursor: pointer;
+}
+
+.checkbox {
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border: 2px solid var(--sema-color-border-default);
+  border-radius: 6px;
+  background-color: var(--base-color-surface-white);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  flex-shrink: 0;
+}
+
+.checkbox:hover {
+  border-color: var(--sema-color-border-hover);
+}
+
+.checkbox:checked {
+  background-color: var(--sema-color-brand-primary);
+  border-color: var(--sema-color-brand-primary);
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 16 16' fill='white' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z'/%3E%3C/svg%3E");
+  background-size: 12px;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+.checkbox:focus-visible {
+  outline: 2px solid var(--sema-color-border-focus);
+  outline-offset: 2px;
+}
+
+/* --------------------------------------------------------------------------
+   Select Dropdown
+   -------------------------------------------------------------------------- */
+
+.select {
+  appearance: none;
+  display: block;
+  width: 100%;
+  padding: var(--comp-input-padding-y) var(--comp-input-padding-x);
+  padding-right: 40px;
+  background-color: var(--comp-input-color-background);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%2362625b' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+  background-repeat: no-repeat;
+  background-position: right 12px center;
+  color: var(--comp-input-color-text);
+  font-size: var(--sema-font-size-body);
+  font-family: var(--sema-font-family-primary);
+  border: 1px solid var(--comp-input-color-border);
+  border-radius: var(--comp-input-radius);
+  cursor: pointer;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+  box-sizing: border-box;
+}
+
+.select:hover {
+  border-color: var(--sema-color-border-hover);
+}
+
+.select:focus {
+  outline: none;
+  border-color: var(--comp-input-color-border-focus);
+  box-shadow: 0 0 0 3px rgba(67, 94, 229, 0.15);
+}
+
+/* --------------------------------------------------------------------------
+   Priority Indicators
+   -------------------------------------------------------------------------- */
+
+.priority-high {
+  color: var(--sema-color-error);
+}
+
+.priority-medium {
+  color: var(--base-color-brand-red);
+}
+
+.priority-low {
+  color: var(--sema-color-text-secondary);
+}
+
+/* --------------------------------------------------------------------------
+   Avatar
+   -------------------------------------------------------------------------- */
+
+.avatar {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: var(--sema-radius-full);
+  background-color: var(--base-color-surface-sand);
+  color: var(--sema-color-text-primary);
+  font-size: var(--sema-font-size-caption);
+  font-weight: 700;
+  text-transform: uppercase;
+  flex-shrink: 0;
+}
+
+.avatar-sm {
+  width: 32px;
+  height: 32px;
+  font-size: var(--sema-font-size-small);
+}
+
+.avatar-lg {
+  width: 56px;
+  height: 56px;
+  font-size: var(--sema-font-size-body);
+}
