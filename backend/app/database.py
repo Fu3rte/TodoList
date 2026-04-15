@@ -1,11 +1,21 @@
 from tortoise import Tortoise
-from app.config import get_settings
+
+TORTOISE_ORM = {
+    "connections": {"default": "mysql://root:password@localhost:3306/todolist"},
+    "apps": {
+        "models": {
+            "models": ["app.models"],
+            "default_connection": "default",
+        },
+    },
+    "use_tz": False,
+    "timezone": "UTC",
+}
 
 
 async def init_db():
-    settings = get_settings()
     await Tortoise.init(
-        db_url=settings.database_url,
+        db_url=TORTOISE_ORM["connections"]["default"],
         modules={"models": ["app.models"]},
         use_tz=False,
         timezone="UTC",
