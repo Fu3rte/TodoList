@@ -23,5 +23,8 @@ Thumbs.db
 # Claude
 .claude/
 
+# Frontend build
+frontend/.vite/deps/
+
 # Logs
 *.log
