@@ -9,6 +9,11 @@ class TagService:
     @staticmethod
     async def create(user: User, data: TagCreate) -> Tag:
         tag = await Tag.create(name=data.name, user=user)
+        # Tortoise with MySQL doesn't set id on create - refetch to get the actual ID
+        if tag.id is None:
+            tags = await Tag.filter(user=user, name=data.name).order_by("-id")
+            if tags:
+                tag = tags[0]
         return tag
 
     @staticmethod

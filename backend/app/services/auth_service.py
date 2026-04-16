@@ -14,7 +14,9 @@ class AuthService:
                 email=user_data.email,
                 hashed_password=hashed_password,
             )
-            await user.refresh_from_db()
+            # Tortoise with MySQL doesn't properly set id on create - re-fetch to get actual ID
+            if user.id is None:
+                user = await User.get(email=user_data.email)
             return user
         except IntegrityError:
             raise ValueError("User with this email or username already exists")

@@ -13,6 +13,11 @@ class CategoryService:
             parent_id=data.parent_id,
             user=user,
         )
+        # Tortoise with MySQL doesn't set id on create - refetch to get the actual ID
+        if category.id is None:
+            cats = await Category.filter(user=user, name=data.name, parent_id=data.parent_id).order_by("-id")
+            if cats:
+                category = cats[0]
         return category
 
     @staticmethod
