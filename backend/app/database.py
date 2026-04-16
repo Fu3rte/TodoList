@@ -1,7 +1,9 @@
 from tortoise import Tortoise
+from app.config import get_settings
+
 
 TORTOISE_ORM = {
-    "connections": {"default": "mysql://root:password@localhost:3306/todolist"},
+    "connections": {"default": None},
     "apps": {
         "models": {
             "models": ["app.models"],
@@ -14,13 +16,16 @@ TORTOISE_ORM = {
 
 
 async def init_db():
+    settings = get_settings()
+    TORTOISE_ORM["connections"]["default"] = settings.database_url
     await Tortoise.init(
         db_url=TORTOISE_ORM["connections"]["default"],
         modules={"models": ["app.models"]},
         use_tz=False,
         timezone="UTC",
     )
-    await Tortoise.generate_schemas()
+    # Skip generate_schemas() - tables are pre-created with proper AUTO_INCREMENT
+    # await Tortoise.generate_schemas()
 
 
 async def close_db():

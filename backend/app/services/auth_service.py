@@ -14,6 +14,7 @@ class AuthService:
                 email=user_data.email,
                 hashed_password=hashed_password,
             )
+            await user.refresh_from_db()
             return user
         except IntegrityError:
             raise ValueError("User with this email or username already exists")
