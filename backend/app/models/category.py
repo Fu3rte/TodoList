@@ -11,3 +11,4 @@ class Category(Model):
     updated_at = fields.DatetimeField(auto_now=True)
 
     children: fields.ReverseRelation["Category"]
+    tasks: fields.ReverseRelation["Task"]

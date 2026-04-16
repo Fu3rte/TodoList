@@ -1,0 +1,34 @@
+{
+  "hash": "98e1d063",
+  "configHash": "b11966fe",
+  "lockfileHash": "82615368",
+  "browserHash": "6c0213eb",
+  "optimized": {
+    "react": {
+      "src": "../../node_modules/react/index.js",
+      "file": "react.js",
+      "fileHash": "aa8863e8",
+      "needsInterop": true
+    },
+    "@tanstack/react-query": {
+      "src": "../../node_modules/@tanstack/react-query/build/modern/index.js",
+      "file": "@tanstack_react-query.js",
+      "fileHash": "bc3edbe3",
+      "needsInterop": false
+    },
+    "axios": {
+      "src": "../../node_modules/axios/index.js",
+      "file": "axios.js",
+      "fileHash": "3a8e4978",
+      "needsInterop": false
+    }
+  },
+  "chunks": {
+    "chunk-VIU6CSQP": {
+      "file": "chunk-VIU6CSQP.js"
+    },
+    "chunk-4MBMRILA": {
+      "file": "chunk-4MBMRILA.js"
+    }
+  }
+}

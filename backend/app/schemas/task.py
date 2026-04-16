@@ -1,23 +1,16 @@
-from pydantic import BaseModel, ConfigDict, field_validator
+from pydantic import BaseModel, ConfigDict, Field, field_validator
 from datetime import datetime
 from typing import Optional, List
 from app.models.enums import Priority
 
 
 class TaskCreate(BaseModel):
-    title: str
+    title: str = Field(..., min_length=1)
     description: Optional[str] = None
     category_id: Optional[int] = None
     priority: Optional[Priority] = None
     due_date: Optional[datetime] = None
     tag_ids: Optional[List[int]] = []
-
-    @field_validator("title")
-    @classmethod
-    def title_not_empty(cls, v: str) -> str:
-        if not v.strip():
-            raise ValueError("Task title cannot be empty")
-        return v.strip()
 
 
 class TaskUpdate(BaseModel):

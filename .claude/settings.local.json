@@ -19,7 +19,11 @@
       "Bash(git ls-tree:*)",
       "Bash(git checkout:*)",
       "Bash(git merge:*)",
-      "Bash(git push:*)"
+      "Bash(git push:*)",
+      "Bash(aerich init:*)",
+      "Bash(python -c \"from app.database import TORTOISE_ORM; print\\(TORTOISE_ORM\\)\")",
+      "Bash(aerich --version)",
+      "Bash(PYTHONPATH=. aerich init -t app.database.TORTOISE_ORM)"
     ]
   }
 }
